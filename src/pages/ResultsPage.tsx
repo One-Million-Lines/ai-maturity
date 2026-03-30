@@ -24,7 +24,7 @@ export function ResultsPage() {
         <h2 className="text-2xl font-bold mb-4">No results yet</h2>
         <p className="text-muted-foreground mb-8">Complete the assessment to see your AI maturity score.</p>
         <Button onClick={() => navigate("/assessment")}>
-          Start Assessment <ArrowRight className="ml-2 h-4 w-4" />
+          Start free Assessment <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </div>
     );

@@ -40,7 +40,7 @@ export function LandingPage() {
         </p>
         <div className="flex items-center justify-center gap-4">
           <Button size="lg" onClick={() => navigate("/assessment")}>
-            {hasAnswers ? "Continue Assessment" : "Start Assessment"}
+            {hasAnswers ? "Continue Assessment" : "Start free Assessment"}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
           {hasResults && (
