@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "dimensions": {
+    "foundation": { "label": "Foundation", "weight": 0.30, "maxRawScore": 100 },
+    "capability": { "label": "Capability", "weight": 0.25, "maxRawScore": 100 },
+    "strategy": { "label": "Strategy", "weight": 0.25, "maxRawScore": 100 },
+    "adoption_governance": { "label": "Adoption & Governance", "weight": 0.20, "maxRawScore": 100 }
+  },
+  "maturityLevels": [
+    { "id": "early", "label": "Early", "minScore": 0, "maxScore": 39 },
+    { "id": "developing", "label": "Developing", "minScore": 40, "maxScore": 59 },
+    { "id": "intermediate", "label": "Intermediate", "minScore": 60, "maxScore": 79 },
+    { "id": "advanced", "label": "Advanced", "minScore": 80, "maxScore": 100 }
+  ],
+  "archetypes": [
+    {
+      "id": "not_ready",
+      "label": "Not Ready",
+      "description": "Your organization lacks the foundational readiness for AI adoption. Focus on building basics first.",
+      "conditions": { "overallScoreMax": 35, "foundationMax": 40, "capabilityMax": 40 }
+    },
+    {
+      "id": "experimenting_without_focus",
+      "label": "Experimenting Without Focus",
+      "description": "Some AI activity exists, but without clear strategic direction or ownership. Time to focus.",
+      "conditions": { "overallScoreMin": 36, "overallScoreMax": 58, "strategyMax": 55 }
+    },
+    {
+      "id": "operationalizing_ai",
+      "label": "Operationalizing AI",
+      "description": "Your organization is moving from experimentation to structured execution. Keep building discipline.",
+      "conditions": { "overallScoreMin": 50, "overallScoreMax": 72, "foundationMin": 45, "capabilityMin": 45 }
+    },
+    {
+      "id": "scaling_with_discipline",
+      "label": "Scaling with Discipline",
+      "description": "AI is delivering value and you have the governance to scale. Focus on expanding and optimizing.",
+      "conditions": { "overallScoreMin": 73, "overallScoreMax": 88, "strategyMin": 60, "adoption_governanceMin": 55 }
+    },
+    {
+      "id": "ai_as_strategic_advantage",
+      "label": "AI as Strategic Advantage",
+      "description": "AI is a core part of your competitive advantage. Focus on defensible differentiation and innovation.",
+      "conditions": { "overallScoreMin": 89, "foundationMin": 75, "capabilityMin": 75, "strategyMin": 75, "adoption_governanceMin": 70 }
+    }
+  ],
+  "consistencyRules": [
+    {
+      "id": "advanced_without_governance",
+      "if": { "current_maturity": ["advanced"], "governance_readiness": ["none", "basic"] },
+      "effect": { "penalty": { "adoption_governance": -12 }, "flag": "consistency_warning" }
+    },
+    {
+      "id": "advanced_without_roi",
+      "if": { "current_maturity": ["advanced"], "roi_measurement": ["none", "basic"] },
+      "effect": { "penalty": { "strategy": -10, "adoption_governance": -8 }, "flag": "consistency_warning" }
+    },
+    {
+      "id": "regulated_without_governance",
+      "ifTagsInclude": ["regulated"],
+      "and": { "governance_readiness": ["none"] },
+      "effect": { "penalty": { "adoption_governance": -15 }, "flag": "critical_gap" }
+    },
+    {
+      "id": "poor_data_claiming_intermediate_plus",
+      "if": { "current_maturity": ["intermediate", "advanced"], "constraints": ["poor_data"] },
+      "effect": { "penalty": { "foundation": -10 }, "flag": "consistency_warning" }
+    }
+  ],
+  "strengthRules": [
+    { "id": "strong_foundation", "ifDimensionGte": { "foundation": 70 }, "label": "Usable data and systems foundation" },
+    { "id": "strong_capability", "ifDimensionGte": { "capability": 70 }, "label": "Execution capability exists internally" },
+    { "id": "strong_strategy", "ifDimensionGte": { "strategy": 70 }, "label": "Clear strategic thinking around AI" },
+    { "id": "strong_governance", "ifDimensionGte": { "adoption_governance": 70 }, "label": "Governance and risk readiness are in place" }
+  ]
+}

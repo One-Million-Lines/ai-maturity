@@ -1,0 +1,114 @@
+{
+  "rules": [
+    {
+      "id": "fix_foundation_first",
+      "conditions": { "foundationMax": 40 },
+      "category": "Foundation",
+      "priority": 1,
+      "recommendations": [
+        "Prioritize data accessibility and workflow standardization before broad AI rollout.",
+        "Avoid custom AI development until core operational data is usable.",
+        "Choose one narrow, high-repeatability use case for pilot validation."
+      ]
+    },
+    {
+      "id": "build_capability",
+      "conditions": { "capabilityMax": 40 },
+      "category": "Execution",
+      "priority": 1,
+      "recommendations": [
+        "Partner with external AI vendors rather than building in-house initially.",
+        "Invest in upskilling a small core team on AI fundamentals.",
+        "Consider fractional AI leadership or advisory support."
+      ]
+    },
+    {
+      "id": "focus_strategy",
+      "conditions": { "strategyMax": 45 },
+      "category": "Prioritization",
+      "priority": 2,
+      "recommendations": [
+        "Define clear AI objectives tied to business KPIs.",
+        "Stop random AI experimentation — prioritize 1-2 high-value use cases.",
+        "Create a simple scoring model for evaluating AI opportunities."
+      ]
+    },
+    {
+      "id": "governance_gap",
+      "conditions": { "adoption_governanceMax": 40 },
+      "category": "Governance",
+      "priority": 2,
+      "recommendations": [
+        "Establish minimum governance checkpoints for AI initiatives.",
+        "Define data handling and privacy policies for AI use cases.",
+        "Assign accountability for AI risk and compliance."
+      ]
+    },
+    {
+      "id": "strong_capability_weak_adoption",
+      "conditions": { "capabilityMin": 60, "strategyMin": 60, "adoption_governanceMax": 50 },
+      "category": "Execution",
+      "priority": 2,
+      "recommendations": [
+        "Focus on change management and workflow integration.",
+        "Instrument success metrics for active AI initiatives.",
+        "Build governance guardrails for production AI rollouts."
+      ]
+    },
+    {
+      "id": "ready_to_scale",
+      "conditions": { "foundationMin": 60, "capabilityMin": 60, "strategyMin": 60 },
+      "category": "Roadmap",
+      "priority": 3,
+      "recommendations": [
+        "Standardize your AI delivery approach across teams.",
+        "Create a reusable vendor evaluation framework.",
+        "Expand validated use cases to additional business functions."
+      ]
+    },
+    {
+      "id": "cost_pressure_focus",
+      "tagConditions": ["cost_pressure"],
+      "category": "Use Cases",
+      "priority": 3,
+      "recommendations": [
+        "Focus on support automation and internal knowledge retrieval.",
+        "Target repetitive admin process automation for quick wins.",
+        "Explore forecasting assistance for demand planning."
+      ]
+    },
+    {
+      "id": "growth_pressure_focus",
+      "tagConditions": ["growth_pressure"],
+      "category": "Use Cases",
+      "priority": 3,
+      "recommendations": [
+        "Prioritize lead qualification and sales enablement tooling.",
+        "Explore conversion optimization through AI-driven personalization.",
+        "Invest in AI-powered content operations for marketing scale."
+      ]
+    },
+    {
+      "id": "cx_pressure_focus",
+      "tagConditions": ["cx_pressure"],
+      "category": "Use Cases",
+      "priority": 3,
+      "recommendations": [
+        "Deploy AI-powered support copilots for faster response times.",
+        "Explore churn prediction models for proactive retention.",
+        "Use AI for customer service summarization and handoff quality."
+      ]
+    },
+    {
+      "id": "speed_pressure_focus",
+      "tagConditions": ["speed_pressure"],
+      "category": "Use Cases",
+      "priority": 3,
+      "recommendations": [
+        "Accelerate internal research with AI assistants.",
+        "Use AI for requirements summarization and product specs.",
+        "Automate repetitive product content generation."
+      ]
+    }
+  ]
+}

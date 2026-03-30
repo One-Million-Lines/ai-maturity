@@ -1,0 +1,297 @@
+{
+  "sections": [
+    {
+      "id": "company_context",
+      "title": "Company Context",
+      "description": "Help us understand your organization's operating context.",
+      "icon": "Building2"
+    },
+    {
+      "id": "strategic_intent",
+      "title": "Strategic Intent",
+      "description": "What is driving your interest in AI?",
+      "icon": "Target"
+    },
+    {
+      "id": "current_maturity",
+      "title": "Current Maturity",
+      "description": "How would you describe your current AI readiness?",
+      "icon": "BarChart3"
+    },
+    {
+      "id": "constraints",
+      "title": "Constraints",
+      "description": "What blockers are you facing?",
+      "icon": "ShieldAlert"
+    },
+    {
+      "id": "foundations",
+      "title": "Foundations",
+      "description": "Assess your data and workflow readiness.",
+      "icon": "Database"
+    },
+    {
+      "id": "execution_governance",
+      "title": "Execution & Governance",
+      "description": "Can your organization execute AI initiatives safely?",
+      "icon": "Settings"
+    },
+    {
+      "id": "use_case_inputs",
+      "title": "Use Case Priorities",
+      "description": "Help us identify the best AI opportunities for you.",
+      "icon": "Lightbulb"
+    }
+  ],
+  "questions": [
+    {
+      "id": "industry",
+      "sectionId": "company_context",
+      "type": "single_select",
+      "title": "What industry does your company operate in?",
+      "required": true,
+      "options": [
+        { "id": "manufacturing", "label": "Manufacturing / Industrial", "score": { "foundation": 0 }, "tags": ["industry_manufacturing"] },
+        { "id": "retail", "label": "Retail / E-commerce", "score": { "foundation": 0 }, "tags": ["industry_retail"] },
+        { "id": "professional_services", "label": "Professional Services", "score": { "foundation": 0 }, "tags": ["industry_services"] },
+        { "id": "healthcare", "label": "Healthcare / Life Sciences", "score": { "foundation": 0 }, "tags": ["industry_healthcare", "regulated"] },
+        { "id": "financial_services", "label": "Financial Services / Insurance", "score": { "foundation": 0 }, "tags": ["industry_financial_services", "regulated"] }
+      ],
+      "ui": { "variant": "cards" }
+    },
+    {
+      "id": "company_size",
+      "sectionId": "company_context",
+      "type": "single_select",
+      "title": "How many employees does your company have?",
+      "required": true,
+      "options": [
+        { "id": "1_10", "label": "1–10 (startup)", "score": { "capability": 2 }, "tags": ["size_startup"] },
+        { "id": "11_50", "label": "11–50 (small)", "score": { "capability": 4 }, "tags": ["size_small"] },
+        { "id": "51_200", "label": "51–200 (growing)", "score": { "capability": 5 }, "tags": ["size_growing"] },
+        { "id": "100_500", "label": "100–500 (mid-size)", "score": { "capability": 6 }, "tags": ["size_midmarket"] },
+        { "id": "500_1000", "label": "500–1,000", "score": { "capability": 7 }, "tags": ["size_upper_midmarket"] },
+        { "id": "1000_5000", "label": "1,000–5,000", "score": { "capability": 8 }, "tags": ["size_enterprise"] },
+        { "id": "5000_plus", "label": "5,000+", "score": { "capability": 9 }, "tags": ["size_large_enterprise"] }
+      ],
+      "ui": { "variant": "cards" }
+    },
+    {
+      "id": "strategic_pressure",
+      "sectionId": "strategic_intent",
+      "type": "single_select",
+      "title": "What is the primary strategic pressure driving AI interest?",
+      "required": true,
+      "options": [
+        { "id": "protect_margins", "label": "Cut costs to protect margins", "score": { "strategy": 5 }, "tags": ["cost_pressure"] },
+        { "id": "grow_faster", "label": "Grow faster than competitors", "score": { "strategy": 5 }, "tags": ["growth_pressure"] },
+        { "id": "improve_retention", "label": "Improve customer retention", "score": { "strategy": 5 }, "tags": ["cx_pressure"] },
+        { "id": "launch_faster", "label": "Launch new products or services faster", "score": { "strategy": 5 }, "tags": ["speed_pressure"] }
+      ],
+      "ui": { "variant": "cards" }
+    },
+    {
+      "id": "functions_covered",
+      "sectionId": "strategic_intent",
+      "type": "multi_select",
+      "title": "Which business functions should your AI strategy cover?",
+      "required": true,
+      "options": [
+        { "id": "enterprise_wide", "label": "Enterprise-wide", "score": { "strategy": 3, "adoption_governance": 1 }, "tags": ["broad_scope"] },
+        { "id": "operations_supply_chain", "label": "Operations / Supply Chain", "score": { "strategy": 2, "foundation": 1 }, "tags": ["operations_focus"] },
+        { "id": "customer_service_cx", "label": "Customer Service / CX", "score": { "strategy": 2, "adoption_governance": 1 }, "tags": ["cx_focus"] },
+        { "id": "sales_marketing", "label": "Sales & Marketing", "score": { "strategy": 2, "adoption_governance": 1 }, "tags": ["growth_focus"] },
+        { "id": "finance_admin", "label": "Finance & Admin", "score": { "strategy": 2, "adoption_governance": 1 }, "tags": ["efficiency_focus"] },
+        { "id": "product_rd", "label": "Product / R&D", "score": { "strategy": 2, "capability": 1 }, "tags": ["innovation_focus"] },
+        { "id": "other", "label": "Other", "score": { "strategy": 0 }, "tags": ["custom_scope"] }
+      ],
+      "rules": {
+        "minSelections": 1,
+        "maxSelections": 4,
+        "bonus": [
+          { "ifSelectedCountGte": 2, "add": { "strategy": 3 } }
+        ]
+      },
+      "ui": { "variant": "pills" }
+    },
+    {
+      "id": "strategy_deliverables",
+      "sectionId": "strategic_intent",
+      "type": "multi_select",
+      "title": "What should your AI strategy deliver?",
+      "required": true,
+      "options": [
+        { "id": "use_case_prioritization", "label": "Use case prioritization", "score": { "strategy": 8 } },
+        { "id": "build_buy_partner", "label": "Build / Buy / Partner recommendations", "score": { "strategy": 7, "capability": 2 } },
+        { "id": "governance_risk", "label": "Governance & risk framework", "score": { "adoption_governance": 8, "strategy": 2 }, "tags": ["governance_aware"] },
+        { "id": "roi_model", "label": "ROI model", "score": { "strategy": 8, "adoption_governance": 2 }, "tags": ["roi_oriented"] },
+        { "id": "roadmap_12m", "label": "12-month roadmap", "score": { "strategy": 7, "capability": 1 } }
+      ],
+      "rules": {
+        "bonus": [
+          { "ifIncludesAll": ["use_case_prioritization", "roi_model", "roadmap_12m"], "add": { "strategy": 5 } }
+        ]
+      },
+      "ui": { "variant": "pills" }
+    },
+    {
+      "id": "success_metrics",
+      "sectionId": "strategic_intent",
+      "type": "multi_select",
+      "title": "How will you measure success?",
+      "required": true,
+      "options": [
+        { "id": "cost_reduction", "label": "Measurable cost reduction", "score": { "strategy": 4, "adoption_governance": 4 }, "tags": ["cost_pressure"] },
+        { "id": "revenue_uplift", "label": "Revenue or conversion uplift", "score": { "strategy": 4, "adoption_governance": 4 }, "tags": ["growth_pressure"] },
+        { "id": "faster_time_to_market", "label": "Faster time-to-market", "score": { "strategy": 3, "capability": 2 }, "tags": ["speed_pressure"] },
+        { "id": "reduced_manual_work", "label": "Reduced manual / repetitive work", "score": { "strategy": 4, "capability": 2 }, "tags": ["efficiency_pressure"] },
+        { "id": "competitive_differentiation", "label": "Competitive differentiation", "score": { "strategy": 5, "capability": 2 }, "tags": ["differentiation_pressure"] },
+        { "id": "better_cx_scores", "label": "Better customer experience scores", "score": { "strategy": 3, "adoption_governance": 3 }, "tags": ["cx_pressure"] }
+      ],
+      "rules": {
+        "bonus": [
+          { "ifSelectedCountGte": 2, "add": { "strategy": 2 } }
+        ]
+      },
+      "ui": { "variant": "pills" }
+    },
+    {
+      "id": "current_maturity",
+      "sectionId": "current_maturity",
+      "type": "single_select",
+      "title": "How would you describe your organization's current AI / data maturity?",
+      "required": true,
+      "options": [
+        { "id": "early", "label": "Early — little data infrastructure, no AI in use", "score": { "foundation": 15, "capability": 10, "strategy": 15, "adoption_governance": 10 }, "tags": ["self_assessed_early"] },
+        { "id": "developing", "label": "Developing — some data systems, maybe one AI tool", "score": { "foundation": 35, "capability": 30, "strategy": 35, "adoption_governance": 25 }, "tags": ["self_assessed_developing"] },
+        { "id": "intermediate", "label": "Intermediate — structured data, a few AI pilots underway", "score": { "foundation": 55, "capability": 50, "strategy": 55, "adoption_governance": 45 }, "tags": ["self_assessed_intermediate"] },
+        { "id": "advanced", "label": "Advanced — production AI systems, dedicated data team", "score": { "foundation": 75, "capability": 75, "strategy": 70, "adoption_governance": 70 }, "tags": ["self_assessed_advanced"] }
+      ],
+      "rules": { "weightMultiplier": 0.45 },
+      "ui": { "variant": "cards" }
+    },
+    {
+      "id": "constraints",
+      "sectionId": "constraints",
+      "type": "multi_select",
+      "title": "Which constraints are most relevant to your organization?",
+      "description": "Select all that apply. These help us identify your key blockers.",
+      "required": true,
+      "options": [
+        { "id": "tight_budget", "label": "Tight budget (under €500k)", "score": { "capability": -8 }, "blockerWeight": 6, "tags": ["budget_constrained"] },
+        { "id": "no_ai_talent", "label": "No internal AI / ML talent", "score": { "capability": -18 }, "blockerWeight": 10, "tags": ["talent_gap"] },
+        { "id": "regulated", "label": "Regulated industry (compliance-heavy)", "score": { "adoption_governance": -4 }, "blockerWeight": 5, "tags": ["regulated"] },
+        { "id": "leadership_headcount", "label": "Leadership won't touch headcount optics", "score": { "capability": -10, "strategy": -6 }, "blockerWeight": 8, "tags": ["leadership_constraint"] },
+        { "id": "poor_data", "label": "Fragmented or poor-quality data", "score": { "foundation": -20 }, "blockerWeight": 10, "tags": ["data_problem"] },
+        { "id": "legacy_stack", "label": "Legacy tech stack", "score": { "foundation": -14, "capability": -6 }, "blockerWeight": 8, "tags": ["legacy_heavy"] }
+      ],
+      "ui": { "variant": "cards" }
+    },
+    {
+      "id": "data_accessibility",
+      "sectionId": "foundations",
+      "type": "single_select",
+      "title": "How accessible is your organization's critical data?",
+      "required": true,
+      "options": [
+        { "id": "very_poor", "label": "Critical data is siloed and hard to access", "score": { "foundation": 10 } },
+        { "id": "limited", "label": "Some data is available but fragmented", "score": { "foundation": 30 } },
+        { "id": "moderate", "label": "Key data is accessible in several areas", "score": { "foundation": 55 } },
+        { "id": "strong", "label": "Data is accessible, governed and reusable", "score": { "foundation": 80 } }
+      ],
+      "rules": { "weightMultiplier": 0.9 },
+      "ui": { "variant": "cards" }
+    },
+    {
+      "id": "workflow_repeatability",
+      "sectionId": "foundations",
+      "type": "single_select",
+      "title": "How standardized and documented are your core workflows?",
+      "required": true,
+      "options": [
+        { "id": "chaotic", "label": "Core workflows are inconsistent and poorly documented", "score": { "foundation": 12, "adoption_governance": 10 } },
+        { "id": "mixed", "label": "Some workflows are standardized, many are not", "score": { "foundation": 35, "adoption_governance": 30 } },
+        { "id": "good", "label": "Key workflows are reasonably standardized", "score": { "foundation": 60, "adoption_governance": 50 } },
+        { "id": "strong", "label": "Workflows are documented, measurable, and repeatable", "score": { "foundation": 82, "adoption_governance": 72 } }
+      ],
+      "rules": { "weightMultiplier": 0.85 },
+      "ui": { "variant": "cards" }
+    },
+    {
+      "id": "ownership_model",
+      "sectionId": "execution_governance",
+      "type": "single_select",
+      "title": "Who owns AI initiatives in your organization?",
+      "required": true,
+      "options": [
+        { "id": "none", "label": "No clear owner", "score": { "strategy": 8, "capability": 10 } },
+        { "id": "informal", "label": "Informal ownership by interested individuals", "score": { "strategy": 30, "capability": 30 } },
+        { "id": "function_owner", "label": "Clear owner within a function or team", "score": { "strategy": 55, "capability": 55 } },
+        { "id": "cross_functional", "label": "Cross-functional ownership with executive support", "score": { "strategy": 80, "capability": 75, "adoption_governance": 65 } }
+      ],
+      "rules": { "weightMultiplier": 0.85 },
+      "ui": { "variant": "cards" }
+    },
+    {
+      "id": "governance_readiness",
+      "sectionId": "execution_governance",
+      "type": "single_select",
+      "title": "How mature is your AI governance and risk management?",
+      "required": true,
+      "options": [
+        { "id": "none", "label": "No clear governance or risk approach", "score": { "adoption_governance": 10 } },
+        { "id": "basic", "label": "Ad-hoc reviews for risk and compliance", "score": { "adoption_governance": 35 } },
+        { "id": "defined", "label": "Defined governance process for AI initiatives", "score": { "adoption_governance": 65 } },
+        { "id": "strong", "label": "Strong governance, controls, approvals and monitoring", "score": { "adoption_governance": 85 } }
+      ],
+      "rules": { "weightMultiplier": 0.95 },
+      "ui": { "variant": "cards" }
+    },
+    {
+      "id": "roi_measurement",
+      "sectionId": "execution_governance",
+      "type": "single_select",
+      "title": "How well does your organization measure ROI on technology initiatives?",
+      "required": true,
+      "options": [
+        { "id": "none", "label": "No real ROI measurement discipline", "score": { "strategy": 12, "adoption_governance": 10 } },
+        { "id": "basic", "label": "Some business case thinking, but inconsistent", "score": { "strategy": 35, "adoption_governance": 30 } },
+        { "id": "defined", "label": "Success metrics are defined for most initiatives", "score": { "strategy": 65, "adoption_governance": 55 } },
+        { "id": "strong", "label": "Clear measurement framework and review cadence", "score": { "strategy": 85, "adoption_governance": 75 } }
+      ],
+      "rules": { "weightMultiplier": 0.8 },
+      "ui": { "variant": "cards" }
+    },
+    {
+      "id": "high_repetitive_functions",
+      "sectionId": "use_case_inputs",
+      "type": "multi_select",
+      "title": "Which functions have the highest repetitive workload?",
+      "options": [
+        { "id": "customer_support", "label": "Customer Support", "score": { "strategy": 2 }, "tags": ["uc_support"] },
+        { "id": "data_entry_admin", "label": "Data Entry / Admin", "score": { "strategy": 2 }, "tags": ["uc_admin"] },
+        { "id": "finance_reporting", "label": "Finance / Reporting", "score": { "strategy": 2 }, "tags": ["uc_finance"] },
+        { "id": "sales_outreach", "label": "Sales Outreach", "score": { "strategy": 2 }, "tags": ["uc_sales"] },
+        { "id": "content_creation", "label": "Content Creation", "score": { "strategy": 2 }, "tags": ["uc_content"] },
+        { "id": "operations_logistics", "label": "Operations / Logistics", "score": { "strategy": 2 }, "tags": ["uc_ops"] }
+      ],
+      "rules": { "maxSelections": 3 },
+      "ui": { "variant": "pills" }
+    },
+    {
+      "id": "manual_effort_areas",
+      "sectionId": "use_case_inputs",
+      "type": "multi_select",
+      "title": "Where is manual effort highest?",
+      "options": [
+        { "id": "document_processing", "label": "Document Processing", "score": { "strategy": 1 }, "tags": ["uc_docs"] },
+        { "id": "knowledge_search", "label": "Knowledge Search / Retrieval", "score": { "strategy": 1 }, "tags": ["uc_knowledge"] },
+        { "id": "quality_checks", "label": "Quality Checks / Auditing", "score": { "strategy": 1 }, "tags": ["uc_qa"] },
+        { "id": "scheduling_coordination", "label": "Scheduling / Coordination", "score": { "strategy": 1 }, "tags": ["uc_scheduling"] },
+        { "id": "reporting_dashboards", "label": "Reporting / Dashboards", "score": { "strategy": 1 }, "tags": ["uc_reporting"] }
+      ],
+      "rules": { "maxSelections": 3 },
+      "ui": { "variant": "pills" }
+    }
+  ]
+}

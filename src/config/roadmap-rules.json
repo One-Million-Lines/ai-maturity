@@ -1,0 +1,149 @@
+{
+  "phases": [
+    {
+      "id": "phase_1",
+      "label": "0–30 Days",
+      "description": "Quick wins and foundation setting"
+    },
+    {
+      "id": "phase_2",
+      "label": "31–90 Days",
+      "description": "First pilots and governance setup"
+    },
+    {
+      "id": "phase_3",
+      "label": "3–12 Months",
+      "description": "Scale validated initiatives"
+    }
+  ],
+  "rules": [
+    {
+      "maturityLevels": ["early"],
+      "roadmap": [
+        {
+          "phase": "0–30 Days",
+          "items": [
+            "Identify a single executive sponsor for AI initiatives",
+            "Audit current data landscape — what exists, where, and in what quality",
+            "Map top 5 most repetitive workflows across functions",
+            "Shortlist 2–3 potential AI use cases based on effort vs. impact"
+          ]
+        },
+        {
+          "phase": "31–90 Days",
+          "items": [
+            "Clean and consolidate data in one priority area",
+            "Evaluate 2–3 off-the-shelf AI tools for your top use case",
+            "Define minimum governance requirements (data handling, privacy)",
+            "Run a small proof-of-concept with clear success criteria"
+          ]
+        },
+        {
+          "phase": "3–12 Months",
+          "items": [
+            "Hire or contract a junior data / AI specialist",
+            "Formalize an AI evaluation framework for future initiatives",
+            "Expand the validated pilot to a second business function",
+            "Establish quarterly AI review cadence with leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "maturityLevels": ["developing"],
+      "roadmap": [
+        {
+          "phase": "0–30 Days",
+          "items": [
+            "Define clear ownership for AI initiatives within the organization",
+            "Consolidate existing AI experiments into a single priority list",
+            "Assess data quality and accessibility gaps in priority areas",
+            "Define 1–2 high-value use cases with measurable success criteria"
+          ]
+        },
+        {
+          "phase": "31–90 Days",
+          "items": [
+            "Run a structured AI pilot with KPIs and timeline",
+            "Define basic governance checkpoints for AI initiatives",
+            "Train a small cross-functional working group on AI literacy",
+            "Create a simple ROI model for the first active use case"
+          ]
+        },
+        {
+          "phase": "3–12 Months",
+          "items": [
+            "Scale the validated pilot into production use",
+            "Define a repeatable delivery model for future AI projects",
+            "Standardize data governance and risk review processes",
+            "Evaluate build / buy / partner options systematically"
+          ]
+        }
+      ]
+    },
+    {
+      "maturityLevels": ["intermediate"],
+      "roadmap": [
+        {
+          "phase": "0–30 Days",
+          "items": [
+            "Review current AI portfolio — what's working, what's not",
+            "Identify the next high-impact function for AI expansion",
+            "Strengthen governance processes for production AI systems",
+            "Define a measurement framework across all active AI initiatives"
+          ]
+        },
+        {
+          "phase": "31–90 Days",
+          "items": [
+            "Scale 1–2 validated AI use cases to broader deployment",
+            "Formalize vendor evaluation and management process",
+            "Create change management playbook for AI rollouts",
+            "Establish AI risk monitoring and escalation protocols"
+          ]
+        },
+        {
+          "phase": "3–12 Months",
+          "items": [
+            "Build reusable AI infrastructure and data pipelines",
+            "Expand AI initiatives to 2–3 additional business functions",
+            "Create internal AI center of excellence or capability hub",
+            "Develop competitive advantage use cases beyond efficiency"
+          ]
+        }
+      ]
+    },
+    {
+      "maturityLevels": ["advanced"],
+      "roadmap": [
+        {
+          "phase": "0–30 Days",
+          "items": [
+            "Optimize the AI portfolio — identify underperforming initiatives",
+            "Evaluate AI initiatives for strategic differentiation potential",
+            "Review and strengthen AI governance for enterprise scale",
+            "Benchmark AI ROI across all active use cases"
+          ]
+        },
+        {
+          "phase": "31–90 Days",
+          "items": [
+            "Invest in AI-driven product or service innovation",
+            "Build defensible competitive moats using proprietary data + AI",
+            "Formalize AI talent development and retention strategy",
+            "Establish cross-functional AI operating model"
+          ]
+        },
+        {
+          "phase": "3–12 Months",
+          "items": [
+            "Create AI-first business processes in priority functions",
+            "Evaluate new AI-driven business models or revenue streams",
+            "Build or scale a platform approach for AI delivery",
+            "Position AI capability as external-facing differentiator"
+          ]
+        }
+      ]
+    }
+  ]
+}
