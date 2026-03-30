@@ -17,10 +17,10 @@ export function SingleSelectCardGroup({ options, value, onChange }: SingleSelect
             key={option.id}
             onClick={() => onChange(option.id)}
             className={cn(
-              "relative flex items-center gap-3 rounded-xl border-2 px-5 py-4 text-left transition-all cursor-pointer",
+              "relative flex items-center gap-3 rounded border px-5 py-3.5 text-left transition-all cursor-pointer",
               isSelected
-                ? "border-primary bg-primary/5 shadow-sm"
-                : "border-border hover:border-primary/30 hover:bg-muted/50"
+                ? "border-foreground bg-muted/50"
+                : "border-border hover:border-foreground/30"
             )}
           >
             <div

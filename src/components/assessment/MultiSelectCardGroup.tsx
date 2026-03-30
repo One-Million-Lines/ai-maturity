@@ -31,10 +31,10 @@ export function MultiSelectCardGroup({ options, value, onChange, maxSelections, 
               onClick={() => !isDisabled && toggle(option.id)}
               disabled={isDisabled}
               className={cn(
-                "inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm transition-all cursor-pointer",
+                "inline-flex items-center gap-1.5 rounded border px-4 py-2 text-sm transition-all cursor-pointer",
                 isSelected
-                  ? "border-primary bg-primary/10 text-primary font-medium"
-                  : "border-border hover:border-primary/30",
+                  ? "border-foreground bg-muted/50 font-medium"
+                  : "border-border hover:border-foreground/30",
                 isDisabled && "opacity-40 cursor-not-allowed"
               )}
             >
@@ -58,10 +58,10 @@ export function MultiSelectCardGroup({ options, value, onChange, maxSelections, 
             onClick={() => !isDisabled && toggle(option.id)}
             disabled={isDisabled}
             className={cn(
-              "relative flex items-center gap-3 rounded-xl border-2 px-5 py-4 text-left transition-all cursor-pointer",
+              "relative flex items-center gap-3 rounded border px-5 py-3.5 text-left transition-all cursor-pointer",
               isSelected
-                ? "border-primary bg-primary/5 shadow-sm"
-                : "border-border hover:border-primary/30 hover:bg-muted/50",
+                ? "border-foreground bg-muted/50"
+                : "border-border hover:border-foreground/30",
               isDisabled && "opacity-40 cursor-not-allowed"
             )}
           >

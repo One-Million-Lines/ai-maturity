@@ -23,9 +23,9 @@ export function DimensionScoreBar({ dimension, score }: DimensionScoreBarProps) 
         <span className="text-sm font-medium">{config.label}</span>
         <span className="text-sm font-semibold">{score}/100</span>
       </div>
-      <div className="h-3 w-full overflow-hidden rounded-full bg-muted">
+      <div className="h-2 w-full overflow-hidden rounded-sm bg-muted">
         <div
-          className={cn("h-full rounded-full transition-all duration-1000 ease-out", colorMap[dimension])}
+          className={cn("h-full rounded-sm transition-all duration-1000 ease-out", colorMap[dimension])}
           style={{ width: `${score}%` }}
         />
       </div>

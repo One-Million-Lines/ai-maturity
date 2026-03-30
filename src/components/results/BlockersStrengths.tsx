@@ -12,7 +12,7 @@ export function BlockersList({ blockers }: { blockers: Blocker[] }) {
       </h4>
       <div className="space-y-2">
         {blockers.map((b) => (
-          <div key={b.id} className="flex items-center justify-between rounded-lg bg-destructive/5 border border-destructive/10 px-4 py-3">
+          <div key={b.id} className="flex items-center justify-between rounded bg-destructive/5 border border-destructive/10 px-4 py-3">
             <span className="text-sm">{b.label}</span>
             <span className="text-xs font-semibold text-destructive">Severity: {b.severity}/10</span>
           </div>
@@ -33,7 +33,7 @@ export function StrengthsList({ strengths }: { strengths: Strength[] }) {
       </h4>
       <div className="space-y-2">
         {strengths.map((s) => (
-          <div key={s.id} className="flex items-center rounded-lg bg-success/5 border border-success/10 px-4 py-3">
+          <div key={s.id} className="flex items-center rounded bg-success/5 border border-success/10 px-4 py-3">
             <span className="text-sm">{s.label}</span>
           </div>
         ))}

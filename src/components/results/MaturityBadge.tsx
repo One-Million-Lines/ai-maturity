@@ -18,7 +18,7 @@ export function MaturityBadge({ level, label }: MaturityBadgeProps) {
   const Icon = config.icon;
 
   return (
-    <div className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold", config.bg, config.color)}>
+    <div className={cn("inline-flex items-center gap-2 rounded px-4 py-2 text-sm font-semibold", config.bg, config.color)}>
       <Icon className="h-4 w-4" />
       {label}
     </div>
@@ -33,7 +33,7 @@ interface ArchetypeCardProps {
 
 export function ArchetypeCard({ id, label, description }: ArchetypeCardProps) {
   return (
-    <div className="rounded-xl border bg-card p-6">
+    <div className="rounded-md border bg-card p-6">
       <div className="flex items-center gap-2 mb-2">
         <Sparkles className="h-5 w-5 text-accent" />
         <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Your Archetype</span>

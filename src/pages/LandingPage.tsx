@@ -27,7 +27,7 @@ export function LandingPage() {
     <div className="container mx-auto px-4 py-12 max-w-5xl">
       {/* Hero */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
+        <div className="inline-flex items-center gap-2 rounded bg-muted px-4 py-1.5 text-sm font-medium text-foreground mb-6">
           <Brain className="h-4 w-4" />
           AI Maturity Assessment
         </div>
@@ -59,8 +59,8 @@ export function LandingPage() {
           {features.map((f) => (
             <Card key={f.title} className="text-center">
               <CardContent className="pt-6">
-                <div className="mx-auto mb-4 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <f.icon className="h-6 w-6 text-primary" />
+                <div className="mx-auto mb-4 w-12 h-12 rounded bg-muted flex items-center justify-center">
+                  <f.icon className="h-6 w-6 text-foreground" />
                 </div>
                 <h3 className="font-semibold mb-1">{f.title}</h3>
                 <p className="text-sm text-muted-foreground">{f.desc}</p>
@@ -75,8 +75,8 @@ export function LandingPage() {
         <h2 className="text-2xl font-bold text-center mb-8">Four maturity dimensions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {dimensions.map((d) => (
-            <div key={d.title} className="flex items-start gap-4 rounded-xl border bg-card p-5">
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
+            <div key={d.title} className="flex items-start gap-4 rounded-md border bg-card p-5">
+              <div className="flex-shrink-0 w-10 h-10 rounded bg-muted flex items-center justify-center">
                 <d.icon className="h-5 w-5 text-muted-foreground" />
               </div>
               <div>

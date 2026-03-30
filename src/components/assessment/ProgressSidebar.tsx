@@ -21,7 +21,7 @@ export function ProgressSidebar() {
             key={section.id}
             onClick={() => goToSection(index)}
             className={cn(
-              "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-sm transition-colors cursor-pointer",
+              "w-full flex items-center gap-3 px-4 py-3 rounded text-left text-sm transition-colors cursor-pointer",
               isActive && "bg-primary/10 text-primary font-medium",
               !isActive && isPast && "text-foreground hover:bg-muted",
               !isActive && !isPast && "text-muted-foreground hover:bg-muted"

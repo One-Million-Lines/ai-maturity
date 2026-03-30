@@ -263,32 +263,35 @@
       "ui": { "variant": "cards" }
     },
     {
-      "id": "high_repetitive_functions",
+      "id": "high_repetitive_workloads",
       "sectionId": "use_case_inputs",
       "type": "multi_select",
-      "title": "Which functions have the highest repetitive workload?",
+      "title": "Where does your organization have the most repetitive workload?",
       "options": [
-        { "id": "customer_support", "label": "Customer Support", "score": { "strategy": 2 }, "tags": ["uc_support"] },
-        { "id": "data_entry_admin", "label": "Data Entry / Admin", "score": { "strategy": 2 }, "tags": ["uc_admin"] },
-        { "id": "finance_reporting", "label": "Finance / Reporting", "score": { "strategy": 2 }, "tags": ["uc_finance"] },
-        { "id": "sales_outreach", "label": "Sales Outreach", "score": { "strategy": 2 }, "tags": ["uc_sales"] },
-        { "id": "content_creation", "label": "Content Creation", "score": { "strategy": 2 }, "tags": ["uc_content"] },
-        { "id": "operations_logistics", "label": "Operations / Logistics", "score": { "strategy": 2 }, "tags": ["uc_ops"] }
+        { "id": "transaction_processing", "label": "Transaction Processing (orders, invoices, tickets)", "score": { "strategy": 3 }, "tags": ["uc_transactions"] },
+        { "id": "customer_support_ops", "label": "Customer Support Operations (Tier 1 requests, FAQs)", "score": { "strategy": 3 }, "tags": ["uc_support"] },
+        { "id": "data_entry_sync", "label": "Data Entry & System Sync (CRM, ERP updates)", "score": { "strategy": 3 }, "tags": ["uc_data_ops"] },
+        { "id": "finance_ops", "label": "Finance Operations (AP/AR, reconciliations, closing tasks)", "score": { "strategy": 2 }, "tags": ["uc_finance_ops"] },
+        { "id": "sales_ops", "label": "Sales Operations (lead qualification, outreach sequences)", "score": { "strategy": 2 }, "tags": ["uc_sales_ops"] },
+        { "id": "hr_ops", "label": "HR / Recruiting Ops (screening, onboarding, payroll admin)", "score": { "strategy": 2 }, "tags": ["uc_hr_ops"] },
+        { "id": "it_ops", "label": "IT / Internal Ops (tickets, access management, configurations)", "score": { "strategy": 2 }, "tags": ["uc_it_ops"] },
+        { "id": "operations_logistics", "label": "Operations / Logistics (order handling, supply chain workflows)", "score": { "strategy": 3 }, "tags": ["uc_ops"] }
       ],
       "rules": { "maxSelections": 3 },
       "ui": { "variant": "pills" }
     },
     {
-      "id": "manual_effort_areas",
+      "id": "high_manual_effort_areas",
       "sectionId": "use_case_inputs",
       "type": "multi_select",
-      "title": "Where is manual effort highest?",
+      "title": "Where is manual effort highest today?",
       "options": [
-        { "id": "document_processing", "label": "Document Processing", "score": { "strategy": 1 }, "tags": ["uc_docs"] },
-        { "id": "knowledge_search", "label": "Knowledge Search / Retrieval", "score": { "strategy": 1 }, "tags": ["uc_knowledge"] },
-        { "id": "quality_checks", "label": "Quality Checks / Auditing", "score": { "strategy": 1 }, "tags": ["uc_qa"] },
-        { "id": "scheduling_coordination", "label": "Scheduling / Coordination", "score": { "strategy": 1 }, "tags": ["uc_scheduling"] },
-        { "id": "reporting_dashboards", "label": "Reporting / Dashboards", "score": { "strategy": 1 }, "tags": ["uc_reporting"] }
+        { "id": "document_processing", "label": "Document Processing (invoices, contracts, PDFs)", "score": { "strategy": 3 }, "tags": ["uc_docs"] },
+        { "id": "data_movement", "label": "Data Movement Between Systems (copy-paste, integrations gaps)", "score": { "strategy": 3 }, "tags": ["uc_data_flow"] },
+        { "id": "knowledge_retrieval", "label": "Knowledge Search & Retrieval (docs, emails, internal tools)", "score": { "strategy": 2 }, "tags": ["uc_knowledge"] },
+        { "id": "quality_control", "label": "Quality Checks & Validation (audits, reviews, compliance)", "score": { "strategy": 2 }, "tags": ["uc_quality"] },
+        { "id": "coordination_followups", "label": "Coordination & Follow-ups (emails, approvals, status chasing)", "score": { "strategy": 2 }, "tags": ["uc_coordination"] },
+        { "id": "report_generation", "label": "Report Generation (manual aggregation, Excel workflows)", "score": { "strategy": 2 }, "tags": ["uc_reporting"] }
       ],
       "rules": { "maxSelections": 3 },
       "ui": { "variant": "pills" }

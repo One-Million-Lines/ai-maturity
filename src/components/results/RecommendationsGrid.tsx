@@ -36,7 +36,7 @@ export function RecommendationsGrid({ recommendations }: RecommendationsGridProp
             {recs.map((rec, i) => (
               <div
                 key={`${rec.id}-${i}`}
-                className={`rounded-lg border bg-card px-4 py-3 border-l-4 ${categoryColors[category] || "border-l-primary"}`}
+                className={`rounded border bg-card px-4 py-3 border-l-4 ${categoryColors[category] || "border-l-primary"}`}
               >
                 <p className="text-sm">{rec.text}</p>
               </div>

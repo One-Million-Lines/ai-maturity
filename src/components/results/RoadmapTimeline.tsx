@@ -24,7 +24,7 @@ export function RoadmapTimeline({ roadmap }: RoadmapTimelineProps) {
           )}
 
           <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
+            <div className="flex-shrink-0 w-10 h-10 rounded bg-primary text-primary-foreground flex items-center justify-center">
               <Calendar className="h-5 w-5" />
             </div>
 
@@ -34,7 +34,7 @@ export function RoadmapTimeline({ roadmap }: RoadmapTimelineProps) {
                 {phase.items.map((item, i) => (
                   <div
                     key={i}
-                    className={`flex items-start gap-3 rounded-lg border px-4 py-3 ${phaseColors[phaseIdx] || phaseColors[0]}`}
+                    className={`flex items-start gap-3 rounded border px-4 py-3 ${phaseColors[phaseIdx] || phaseColors[0]}`}
                   >
                     <ArrowRight className="h-4 w-4 mt-0.5 flex-shrink-0 text-muted-foreground" />
                     <span className="text-sm">{item}</span>
