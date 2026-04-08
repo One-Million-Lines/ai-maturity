@@ -3,6 +3,7 @@ import { AppShell } from "@/components/layout/AppShell";
 import { LandingPage } from "@/pages/LandingPage";
 import { AssessmentPage } from "@/pages/AssessmentPage";
 import { ResultsPage } from "@/pages/ResultsPage";
+import { FloatingNav } from "@/components/FloatingNav";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/results" element={<ResultsPage />} />
         </Routes>
       </AppShell>
+      <FloatingNav position="bottom-right" />
     </BrowserRouter>
   );
 }
