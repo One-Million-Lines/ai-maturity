@@ -5,6 +5,7 @@ const LINKS = [
   { label: "AI Orchestration", href: "/demo/ai-orchestration/" },
   { label: "AI Maturity", href: "/demo/ai-maturity/" },
   { label: "AI Business Map", href: "/demo/ai-business-roadmap/" },
+  { label: "AI Data Governance", href: "/demo/ai-data-governance/" },
 ];
 
 interface FloatingNavProps {
